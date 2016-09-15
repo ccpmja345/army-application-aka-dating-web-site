@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <style>
+     article,aside,figure,header,hgroup,
+     menu,nav,section{display:block;}
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+
+
+        /*
+        The background of each fieldset is lightyellow e.g. background:lightyellow.
+        The border of each fieldset is yellow, with 10px width e.g. border:10px solid yellow
+        The fieldset needs to have margin-bottom:10px
+        The width of each fieldset is 720px
+
+
+        The width of each label is 180px
+        The label text needs to have display:inline-block
+        The label text needs to be right-align and top-align
+
+
+        The labels of the checkbox and the radio needs to have width:auto
+
+        For the words on both sides of the two range, you can use any appropriate style e.g. text-align:center
+
+        The textarea needs to be width:360px and height:50px
+        */
+
+        fieldset {
+            background:lightyellow;
+            border:10px solid yellow;
+            margin-bottom:10px;
+            width: 720px;
+        }
+
+        label {
+            width:180px;
+            display:inline-block;
+            text-align:right;
+            vertical-align:top;
+        }
+        textarea{
+            width:auto;
+            text-align:center;
+            width:360px;
+            height:50px;
+        }
+
+    </style>
+    <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+
+
+
+
+
+</head>
+<body>
+<h1></h1>
+<fieldset input="backgorund:lightyellow" id="background">
+    <legend>Your Face</legend>
+    <!--Image-->
+    <label for="avatar">Your image:</label>
+    <input type="file" id="avatar" name="avatar" required><br>
+
+    <!--Image preview-->
+    <label for="blah">Image preview:</label>
+    <input type="file" onchange="readURL(this);"/>
+    <img id="blah" src="#" alt="your image"/><br>
+</fieldset>
+<br>
+<fieldset>
+    <legend>Your General Details</legend>
+    <label for="Name">Name:</label>
+<input  id="Name" name="Name" required>
+    <!--<input type="text">-->
+<br>
+
+    <label for="male">Gender:</label>
+<!--<input  id="Gender" name="Gender" required>-->
+    <input type="radio" id="male" name="gender">
+    <input type="radio" id="female" name="gender">
+<br>
+
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" required>
+<br>
+
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date" required>
+<br>
+
+    <label for="color">Favorite Color:</label>
+    <input type="color" id="color" name="color">
+<br>
+<label for="country" id="country">Which Country:</label>
+<!--<input type="country" id="country" name="country">-->
+        <select>
+            <option value="us">United States</option>
+            <option value="ax">Finland</option>
+            <option value="ch">Switzerland</option>
+            <option value="ca">Canada</option>
+            <option value="de">Germany</option>
+            <option value="ru">Russian Federation</option>
+        </select><br>
+</fieldset>
+<br>
+<fieldset>
+    <legend>Your Indicators</legend>
+    <label for="range" id="range">Height:short</label>
+        <input type="range" min="0" max="100">
+    <label for="range">Tall</label>
+        <br>
+    <label for="range">Salary:Poor</label>
+        <input type="range" min="0" max="100">
+    <label for="range">Rich</label>
+</fieldset>
+<br>
+<fieldset>
+    <legend>Your Contact Information</legend>
+        <br>
+    <label for="email" id="email">Email:</label>
+        <input type="email">
+        <br>
+    <label for="tel" id="tel">Mobile:</label>
+        <input type="tel">
+        <br>
+    <label for="rows" id="rows">Address:</label>
+        <textarea rows="4" cols="50"></textarea>
+        <br>
+    <lable for="context">Method to contact you</lable>
+        <input type="checkbox" name="context" value="Email"> Email<br>
+        <input type="checkbox" name="context" value="Whatsapp" checked> Whatsapp<br>
+        <input type="checkbox" name="context" value="In-app chat" checked> In-app chat<br>
+
+</fieldset>
+<input type="submit">
+
+<script type="text/javascript">
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#blah')
+                        .attr('src', e.target.result)
+                        .width(150)
+                        .height(200);
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
+
+type="text/javascript">
+
+
+
+
+
+</body>
+</html>
